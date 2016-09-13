@@ -1,0 +1,3 @@
+This project consists on a simple scaffold that can be used to start up a React project very rapidly. It integrates Webpack, ESlint, PostCss, React and Redux such that developers can immediately begin to develop their frontend.
+
+The Webpack configuration has been primarily done following the indications on  http://survivejs.com/webpack/introduction/ . However much of it has been skipped for the sake of simplicity. The config doesn't include any build/production optimizations.
