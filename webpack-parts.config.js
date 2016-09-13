@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
 const localScope = require('postcss-local-scope');
+const postcssImport = require('postcss-import');
 
 exports.devServer = function (options) {
     return {
@@ -52,7 +53,14 @@ exports.setupCSS = function (paths) {
             ]
         },
         postcss: function () {
-            return [autoprefixer, precss, localScope];
+             return [
+	             postcssImport({
+	                addDependencyTo: webpack
+	             }), 
+	             autoprefixer, 
+	             precss, 
+	             localScope
+	        ];
         }
     };
 };
